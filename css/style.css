@@ -1,0 +1,176 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 100%;
+}
+body {
+  font-size: 0.9rem;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+li {
+  list-style: none;
+}
+h1 {
+  margin: 0;
+}
+h3 {
+  font-weight: normal;
+}
+.site-title {
+  width: 60px;
+  line-height: 1px;
+  padding: 8px 0;
+}
+.site-title a {
+  display: block;
+}
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto 0px auto;
+  padding: 0 10%;
+  padding-top: 56px; /* スクロール時ヘッダー分ずれるのを防ぐ */
+}
+
+/* ----------ヘッダー */
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 10%;
+
+  position: fixed;
+  left: 0; /* 追加 flexを利用したヘッダーfixedで固定する場合*/
+  right: 0; /* 追加 */
+  z-index: 10;
+  background-color: rgba(30, 30, 30, 0.9);
+}
+#header ul {
+  display: flex;
+}
+#header li {
+  margin-left: 30px;
+}
+#header li a {
+  color: #fff;
+}
+#header li a:hover {
+  opacity: 0.7;
+}
+
+main {
+  padding-top: 56px; /* ヘッダーの高さ 56px */
+  background-color: rgb(255, 255, 255);
+
+}
+
+
+/* ----------メインビジュアル */
+#mainvisual {
+  position:relative;
+  margin-bottom: 30px;
+}
+#mainvisual p {
+  position: absolute;
+  padding: 10px;
+  margin:0;
+}
+.container .title {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  font-size: 4rem;
+  color: #fff;
+
+  text-shadow: 1px 2px 3px #808080;
+}
+#mainvisual img {
+  width: 100%;
+  max-width: 1920px;
+  object-fit: cover;
+}
+
+.video-wrap {
+  max-width: 50%; /* ここに動画の横幅を指定 */
+}
+.video {
+  position: relative;
+  width:100%; /* 横幅は100%にしておく(ここを変えたい場合は実装コード2の方法を確認してください) */
+  height:0; /* 高さは0にしておく(padding-topで高さを指定するため) */
+  padding-top: 56.25%; /* 高さを指定(16:9) */
+}
+.video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* ----------概要（#overview） */
+#overview {
+  font-size: 1.1rem;
+}
+#overview p {
+  margin: 0 auto;
+}
+
+/* ----------コンテンツ */
+.section-title {
+  border-bottom: solid 2px rgb(216, 140, 0);
+  box-shadow: 0 1px 0 rgb(255, 166, 0);
+  margin-bottom: 15px;
+}
+
+section ul li {
+  width: 30%;
+  margin-right: 5%;
+}
+section ol ul {
+  display: flex;
+  justify-content: flex-start;
+}
+.index-list > li { /* 直下セレクタ */
+  list-style: square;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-left: 1em;
+}
+.index-list > p {
+  margin-bottom: 15px;
+}
+
+/* ----------フッター */
+#footer {
+  font-size: 0.5rem;
+  padding: 10px 0;
+  text-align: center;
+  background-color: rgba(30, 30, 30, 0.9);
+  color: #fff;
+}
+
+
+/* ----------スマートフォン向けレイアウト */
+@media (max-width: 670px) {
+  .container .title {
+    font-size: 3rem;
+  }
+  .video-wrap {
+    max-width: 100%; /* ここに動画の横幅を指定 */
+  }
+  #overview {
+    font-size: 0.9rem;
+  }
+}
